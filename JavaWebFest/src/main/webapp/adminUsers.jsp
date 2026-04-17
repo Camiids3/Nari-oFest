@@ -1,5 +1,5 @@
 <%@include file="/lib/header.jsp"%>
-
+<%@ page import="Modelo.*" %>
 <div class="container mt-4">
 
     <!-- Agregar Usuario -->

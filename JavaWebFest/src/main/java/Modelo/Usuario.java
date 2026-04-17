@@ -2,7 +2,7 @@ package Modelo;
 
 public class Usuario {
     private static int contadorId = 1;
-
+    
     private String Nombre;
     private int Edad;
     private String Correo;

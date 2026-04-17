@@ -37,4 +37,13 @@ public class BaseDatos {
     public static void agregarUsuario(Usuario u) {
         listaUsuarios.add(u);
     }
+
+    public static Usuario buscarUsuarioPorId(int id) {
+        for (Usuario u : listaUsuarios) {
+            if (u.getIdUsuario() == id) {
+                return u;
+            }
+        }
+        return null;
+    }
 }

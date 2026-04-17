@@ -32,12 +32,15 @@
                 <td><%= u.getCorreo()%></td>
                 <td><%= u.getRol()%></td>
                 <td>
-                    <form action="ServletUsuarios" method="POST" style="display:inline;">
+
+                    <form action="ServletUsuarios" method="POST" style="display:inline;"
+                          onsubmit="return confirm('¿Estás seguro de eliminar este usuario?');">
                         <input type="hidden" name="accion" value="eliminar"/>
-                        <input type="hidden" name="id" value="<%=u.getIdUsuario()%>"/>
-                        <button type ="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        <input type="hidden" name="id" value="<%= u.getIdUsuario()%>"/>
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                     </form>
-                    <form action ="adminUsers.jsp" method="POST" style="display:inline">
+
+                    <form action="editarUsuario.jsp" method="GET" style="display:inline;">
                         <input type="hidden" name="id" value="<%= u.getIdUsuario()%>"/>
                         <button type="submit" class="btn btn-warning btn-sm">Editar</button>
                     </form>
@@ -45,7 +48,7 @@
                 </td>
             </tr>
             <%
-                }   
+                }
             %>
         </tbody>
     </table>

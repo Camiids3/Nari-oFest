@@ -1,10 +1,11 @@
 <%@include file="/lib/header.jsp"%>
-
+<%@ page import="Modelo.*" %>
 <div class="container mt-4">
 
     <!-- Agregar Evento -->
     <h2>Agregar Evento</h2>
     <form action ="ServletEventos" method="POST" class="mb-5">
+        
         <input type="hidden" name="accion" value="agregar"/>
         <div class="mb-3">
             <label class="form-label">Nombre del evento</label>
@@ -35,7 +36,7 @@
 
         <div class="mb-3">
             <label class="form-label">Capacidad</label>
-            <input type="number" class="form-control" name="capacidad" placeholder="Numero ma¡ximo de asistentes" required>
+            <input type="number" class="form-control" name="capacidad" placeholder="Numero maximo de asistentes" required>
         </div>
 
 
@@ -44,8 +45,9 @@
     </form>
 
     <hr>
-
-
 </div>
+
+
+
 
 <%@include file="/lib/footer.jsp"%>

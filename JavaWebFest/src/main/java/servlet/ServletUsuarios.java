@@ -41,6 +41,24 @@ public class ServletUsuarios extends HttpServlet {
             response.sendRedirect("listaUsers.jsp");
 
         }
+        if ("editar".equals(accion)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            String nombre = request.getParameter("nombre");
+            String correo = request.getParameter("correo");
+            String contraseña = request.getParameter("contraseña");
+            int edad = Integer.parseInt(request.getParameter("edad"));
+            String rol = request.getParameter("rol");
+
+            Usuario usuarioEditar = BaseDatos.buscarUsuarioPorId(id);
+            if (usuarioEditar != null) {
+                usuarioEditar.setNombre(nombre);
+                usuarioEditar.setCorreo(correo);
+                usuarioEditar.setContraseña(contraseña);
+                usuarioEditar.setEdad(edad);
+                usuarioEditar.setRol(rol);
+            }
+            response.sendRedirect("listaUsers.jsp");
+        }
 
     }
 
